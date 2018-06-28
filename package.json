@@ -1,0 +1,25 @@
+{
+  "name": "SFC-SFS-LINEbot",
+  "version": "0.1.0",
+  "description": "sweet line bot for sfc-sfs",
+  "main": "index.js",
+  "repository": "https://github.com/Hykwtakumin/SFC-SFS-LINEbot",
+  "author": "\"hykwtakumin <hykwtakumin@gmail.com> (https://github.com/Hykwtakumin/)\"",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "clean": "rm -rf dist/*",
+    "build": "tsc",
+    "start": "npm run build && cd dist && node index.js"
+  },
+  "dependencies": {
+    "@line/bot-sdk": "^6.1.0",
+    "cheerio-httpcli": "^0.7.3",
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0"
+  }
+}
