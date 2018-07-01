@@ -2,6 +2,7 @@ import * as line from '@line/bot-sdk'
 import * as express from 'express'
 import * as cheerio from 'cheerio-httpcli';
 
+
 //SFC-SFSのアドレス
 const sfsAddr = process.env.SFS_URL || "https://vu.sfc.keio.ac.jp/sfc-sfs/";
 //ログイン情報
@@ -35,7 +36,7 @@ app.post('/webhook', line.middleware(config), (req, res) => {
     console.log(req.body.events);
     Promise
         .all(req.body.events.map(handleWebhookEvent))
-        .then((result) => res.json(result));
+        .then((result) => res.json(result)).catch(e => {console.log(e)})
 });
 
 function handleWebhookEvent(event) {
